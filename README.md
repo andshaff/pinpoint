@@ -1,6 +1,6 @@
 # PinPoint
 
-PinPoint is an Android app for bowlers to track series scores by capturing score screens and processing them via OCR. It parses the results into structured player/game data and allows analysis of stats over time.
+PinPoint is an Android app for Bowlero/Lucky Strike league bowlers to record and track series scores by capturing score screens and processing them via OCR. It parses the results into structured player/game data and allows analysis of stats over time.
 
 ---
 
