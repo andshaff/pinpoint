@@ -18,4 +18,8 @@ For full change history, see [CHANGELOG.md](./CHANGELOG.md).
 
 ## Screenshots
 
-*(Screenshots not yet available)*
+<p align="center" style="margin: 0; padding: 0;">
+  <img src="./docs/screens/image1.jpg" width="32%" style="margin-right: 1%;" />
+  <img src="./docs/screens/image2.jpg" width="32%" style="margin-right: 1%;" />
+  <img src="./docs/screens/image3.jpg" width="32%" />
+</p>

@@ -27,7 +27,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.BottomAppBar
-import androidx.compose.material3.Button
+import androidx.compose.material3.IconButton
+import androidx.compose.material.icons.outlined.AddPhotoAlternate
 import androidx.compose.material3.Card
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.DropdownMenu
@@ -157,8 +158,14 @@ class MainActivity : ComponentActivity() {
                     },
                     bottomBar = {
                         BottomAppBar {
-                            Button(onClick = { showDialog = true }) {
-                                Text("Parse Image")
+                            // Spacer to push the IconButton to the end, if desired
+                            // Spacer(Modifier.weight(1f))
+
+                            IconButton(onClick = { showDialog = true }) {
+                                Icon(
+                                    imageVector = Icons.Outlined.AddPhotoAlternate,
+                                    contentDescription = "Parse Image" // Important for accessibility
+                                )
                             }
                         }
                     }
@@ -169,7 +176,14 @@ class MainActivity : ComponentActivity() {
                             .padding(paddingValues)
                     ) {
                         croppedImageUri?.let {
-                            Text("Image cropped and ready.", style = MaterialTheme.typography.titleMedium)
+                            Text(
+                                "Select the bowlers whose scores you want to save.", // Updated text from your file
+                                style = MaterialTheme.typography.titleMedium,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(horizontal = 16.dp, vertical = 24.dp), // Apply similar padding here
+                                textAlign = TextAlign.Center
+                            )
                         } ?: Greeting("Welcome!")
 
                         if (loading) LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
@@ -269,8 +283,14 @@ fun PinPointTopAppBar(
 
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello, $name!")
+fun Greeting(name: String, modifier: Modifier = Modifier) {
+    Text(
+        text = "Ready to roll? Tap the add image icon below to take or choose a photo of your bowling scores.",
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp, vertical = 24.dp)
+
+    )
 }
 
 @Composable
